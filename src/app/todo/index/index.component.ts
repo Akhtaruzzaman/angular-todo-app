@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import {PlatformLocation } from '@angular/common';
 
 @Component({
   selector: 'app-index',
@@ -8,7 +9,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class IndexComponent implements OnInit {
 
-  constructor(private toastr: ToastrService) {}
+  hrf=(this.platformLocation as any).location;
+  constructor(private toastr: ToastrService, private platformLocation: PlatformLocation) {}
 
   ngOnInit(): void {
   }
